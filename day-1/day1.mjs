@@ -1,18 +1,17 @@
-import {readFileToLine} from "../utils/read-file.mjs";
+import { readFileToLine } from '../utils/read-file.mjs';
 
 const lines = readFileToLine('./input.txt');
-
 
 let currentElf = 0;
 const elves = [];
 for (const line of lines) {
-    if (line.trim().length < 1) {
-        elves.push(currentElf);
-        currentElf = 0;
-        continue;
-    }
+	if (line.trim().length < 1) {
+		elves.push(currentElf);
+		currentElf = 0;
+		continue;
+	}
 
-    currentElf += parseInt(line);
+	currentElf += parseInt(line);
 }
 
 elves.sort((a, b) => b - a);
@@ -26,4 +25,7 @@ console.log();
 console.log('Day 2');
 console.log('---------------------------');
 console.log('Top 3:', topThree.map((n, i) => `${i + 1}: ${n}`).join(' | '));
-console.log('Sum of top 3', topThree.reduce((acc, cur) => acc + cur));
+console.log(
+	'Sum of top 3',
+	topThree.reduce((acc, cur) => acc + cur),
+);
