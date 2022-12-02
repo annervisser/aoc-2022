@@ -1,4 +1,5 @@
 import { readFileToLine } from '../utils/read-file.mjs';
+import { sum } from '../utils/sum.mjs';
 
 const lines = readFileToLine('./input.txt');
 
@@ -25,7 +26,4 @@ console.log();
 console.log('Day 2');
 console.log('---------------------------');
 console.log('Top 3:', topThree.map((n, i) => `${i + 1}: ${n}`).join(' | '));
-console.log(
-	'Sum of top 3',
-	topThree.reduce((acc, cur) => acc + cur),
-);
+console.log('Sum of top 3', sum(topThree));
